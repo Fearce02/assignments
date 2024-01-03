@@ -4,7 +4,20 @@
 */
 
 function isPalindrome(str) {
-  return true;
+ 
+  const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+
+  const reversedStr = cleanedStr.split('').reverse().join('');
+
+
+  return cleanedStr === reversedStr;
 }
+
+const inputString1 = "Watermelon";
+console.log(`Is "${inputString1}" a palindrome? ${isPalindrome(inputString1)}`);
+
+const inputString2 = "Refer";
+console.log(`Is "${inputString2}" a palindrome? ${isPalindrome(inputString2)}`);
 
 module.exports = isPalindrome;
